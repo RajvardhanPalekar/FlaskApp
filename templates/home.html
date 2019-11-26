@@ -1,18 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div>
+<div class="row">
+    <div class="col-md-8">
         <h2>All Groups</h2>
         {% for group in groups %}
-            <article class="media content-section">
-                <div class="media-body">
-                    <h3><a class="article-title" href="#">{{ group.name }}</a></h3>
-                    <div class="article-metadata">
-                        <p>created by <a class="mr-2" href="#">{{ group.admin }}</a></p>
-                        <a class="text-muted" href="#">{{ group.participants }} participants</a>
-                    </div>
+        <article class="media content-section">
+            <div class="media-body">
+                <h3><a class="article-title" href="#">{{ group.name }}</a></h3>
+                <div class="article-metadata">
+                    <p>created by <a class="mr-2" href="#">{{ group.admin }}</a></p>
+                    <a class="text-muted" href="#">{{ group.participants }} participants</a>
                 </div>
-            </article>
+            </div>
+        </article>
         {% endfor %}
     </div>
+    <div class="col-md-4">
+        <div class="content-section">
+            <h3>Upcoming events</h3>
+            <p class='text-muted'>Not there yet..
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Event 1</li>
+                    <li class="list-group-item list-group-item-light">Event 2</li>
+                    <li class="list-group-item list-group-item-light">Event 3</li>
+                    <li class="list-group-item list-group-item-light">View all</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock content %}
-
