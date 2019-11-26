@@ -1,16 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 groups = [
     {
-        'name': 'Marvel Family',
+        'name': 'Avengers Family',
         'admin': 'Tony Stark',
-        'participants': 8
+        'participants': 6
     },
     {
-        'name': 'Health Buddies',
+        'name': 'Workout Buddies',
         'admin': 'Bruce Banner',
-        'participants': 3
+        'participants': 5
     },
     {
         'name': 'Work Friends',

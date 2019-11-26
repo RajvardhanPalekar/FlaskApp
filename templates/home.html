@@ -1,9 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-    {% for group in groups %}
-        <h1>{{group.name}}</h1>
-        <p> Admin : {{group.admin}} </p>
-        <p> Participants : {{group.participants}} </p>
-    {% endfor %}
+    <div>
+        <h2>All Groups</h2>
+        {% for group in groups %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <h3><a class="article-title" href="#">{{ group.name }}</a></h3>
+                    <div class="article-metadata">
+                        <p>created by <a class="mr-2" href="#">{{ group.admin }}</a></p>
+                        <a class="text-muted" href="#">{{ group.participants }} participants</a>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
 {% endblock content %}
 
